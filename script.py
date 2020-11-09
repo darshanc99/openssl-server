@@ -49,12 +49,10 @@ def receivemessages():
             #print(operation)
             os.system(operation)
             newpath = receiver + '/received/' + filename[:-4] + '.txt'
-            if os.path.isfile(newpath):
-                print("You can now view this file chat!")
-                operation = 'rm ' + receiver + '/received/' + filename[:-4] + '.txt'
-                os.system(operation)
-            else:
-                print("That file chat is not for you. Access denied.")
+            operation = 'cat ' + newpath
+            print("The Message is: ")
+            os.system(operation)
+            print()
         else:
             print("No such file exists. Try again!")
     else:
